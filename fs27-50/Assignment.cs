@@ -137,4 +137,82 @@ void A07()
 }
 A07();
 
+Console.WriteLine("====Assignemnt 08====");
+void A08()
+{
+    int count = 0;
+    bool understand = false;
+    while (!understand)
+    {
+        Console.WriteLine("Do you understand loops? (y/n)");
+        string response = Console.ReadLine().ToLower();
+        count++;
+        if (response == "y")
+        {
+            understand = true;
+            Console.WriteLine($"You understood loops after {count} attempts.");
+        }
+        else {
+            if (count < 10)
+            {
+                Console.WriteLine("Let's try again.");
+            }
+            else
+            {
+                Console.WriteLine("You have tried 10 times. Please take a break and review the material.");
+                break;
+            }
+        }
+    }
+}
+A08();
+
+Console.WriteLine("====Assignemnt 09====");
+void A09()
+{
+    List<string> nameList = new List<string>();
+    string name = "";
+    do
+    {
+        Console.WriteLine("Enter a name (or type 'q' to finish):");
+        name = Console.ReadLine();
+        nameList.Add(name);
+    } while (name != "q");
+    Console.WriteLine("Names entered:");
+    Console.WriteLine(string.Join(", ", nameList));
+}
+A09();
+
+Console.WriteLine("====Assignemnt 10====");
+void A10()
+{
+    for (int i = 100; i <= 999; i++)
+    {
+        int hundreds = i / 100;
+        int tens = (i - 100*hundreds) / 10;
+        int ones = i % 10;
+        if (i == hundreds * hundreds * hundreds + tens * tens * tens + ones * ones * ones)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+A10();
+
+Console.WriteLine("====Assignemnt 11====");
+void A11()
+{
+    for(int x = 1; x <= 9; x++)
+    {
+        for(int y = 1; y <= x; y++)
+        {
+            Console.Write($"{y}*{x}={x*y}\t");
+        }
+        Console.WriteLine();
+    }
+}
+A11();
+
+
+
 Console.ReadLine();
