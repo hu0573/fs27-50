@@ -213,6 +213,98 @@ void A11()
 }
 A11();
 
+Console.WriteLine("====Assignemnt 12====");
+void A12()
+{
+    int findMin(int[] nums)
+    {
+        int min = nums[0];
+        foreach (int num in nums)
+        {
+            if (num < min)
+            {
+                min = num;
+            }
+        }
+        return min;
+    }
+    int[] nums = { 1, 4, 3, 9, 6, 8, 11 };
+    int[] output = { };
+    while (nums.Length > 0)
+    {
+        int min = findMin(nums);
+        Array.Resize(ref output, output.Length + 1);
+        output[output.Length - 1] = min;
+        List<int> tempList = new List<int>(nums);
+        tempList.Remove(min);
+        nums = tempList.ToArray();
+    }
+    Console.WriteLine("Sorted array: " + string.Join(", ", output));
+}
+A12();
 
+Console.WriteLine("====Assignemnt 13====");
+void A13()
+{
+    Console.WriteLine("Input a first number:");
+    int firstNumber = int.Parse(Console.ReadLine());
+    Console.WriteLine("Input a second number:");
+    int secondNumber = int.Parse(Console.ReadLine());
+    int findMax(int a, int b)
+    {
+        return (a > b) ? a : b;
+    }
+    int max = findMax(firstNumber, secondNumber);
+    Console.WriteLine($"The maximum number is: {max}");
+}
+A13();
+
+Console.WriteLine("====Assignemnt 14====");
+void A14()
+{
+    int[] numbers = { 3, 5, 7, 2, 8, 6, 4, 1 };
+    int sum = 0;
+    foreach (int number in numbers)
+    {
+        sum += number;
+    }
+    Console.WriteLine("Sum of array elements: " + sum);
+}
+A14();
+
+Console.WriteLine("====Assignemnt 15====");
+void A15()
+{
+    Console.WriteLine("Input user name:");
+    string userName = Console.ReadLine();
+    Console.WriteLine("Input password:");
+    string password = Console.ReadLine();
+    if (userName == "admin" && password == "88888")
+    {
+        Console.WriteLine("Access granted.");
+    }
+    else
+    {
+        if (userName != "admin")
+        {
+            Console.WriteLine("Invalid user name.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid password.");
+        }
+    }
+}
+A15();
+
+Console.WriteLine("====Assignemnt 16====");
+void A16()
+{
+    int a = 10;
+    int b = 20;
+    (a, b) = (b, a);
+    Console.WriteLine($"After swapping: a = {a}, b = {b}");
+}
+A16();
 
 Console.ReadLine();
